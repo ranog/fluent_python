@@ -1,6 +1,6 @@
-def fixed(o):
+def fixed(any_object):
     try:
-        hash(o)
+        hash(any_object)
     except TypeError:
         return False
     return True
