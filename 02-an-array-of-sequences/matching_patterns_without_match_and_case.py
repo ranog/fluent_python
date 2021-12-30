@@ -1,4 +1,4 @@
-class Procedure():
+class Procedure:
     pass
 
 
