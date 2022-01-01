@@ -19,8 +19,8 @@ def evaluate(exp, env):
                 return evaluate(consequence, env)
             else:
                 return evaluate(alternative, env)
-        case ['define', Symbol(name), exp]:
-            env[name] = evaluate(exp, env)
+        case ['define', [Symbol(name), *parms], *body] if body:
+            env[name] = Procedure(parms, body, env)
         case ['lambda', [*parms], *body] if body:
             return Procedure(parms, body, env)
         # more lines omitted
