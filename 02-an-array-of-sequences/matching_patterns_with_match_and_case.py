@@ -21,7 +21,7 @@ def evaluate(exp, env):
                 return evaluate(alternative, env)
         case ['define', Symbol(name), exp]:
             env[name] = evaluate(exp, env)
-        case ['lambda', parms, *body] if body:
+        case ['lambda', [*parms], *body] if body:
             return Procedure(parms, body, env)
         # more lines omitted
         case _:
