@@ -14,3 +14,13 @@ print("board[1][2] = 'X'")
 _print_tic_tac_toe_board(board=board)
 
 print()
+
+print('A list with three references to the same list:')
+weird_board = [['_'] * 3] * 3
+_print_tic_tac_toe_board(weird_board)
+
+print()
+
+weird_board[1][2] = 'O'
+print("weird_board[1][2] = 'O'")
+_print_tic_tac_toe_board(weird_board)
