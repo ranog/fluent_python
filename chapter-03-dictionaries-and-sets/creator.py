@@ -1,3 +1,6 @@
+from collections import OrderedDict
+
+
 def get_creators(record: dict) -> list:
     match record:
         case {'type': 'book', 'api': 2, 'authors': [*names]}:
@@ -10,3 +13,13 @@ def get_creators(record: dict) -> list:
             return [name]
         case _:
             raise ValueError(f'Invalid record: {record!r}')
+
+
+b1 = dict(api=1, author='Douglas Hofstadter', type='book', title='Godel, Escher, Bach')
+print(get_creators(b1))
+
+b2 = OrderedDict(api=2, type='book', title='Python in a Nutshell', authors='Martelli Ravenscroft Holden'.split())
+print(get_creators(b2))
+
+# print(get_creators({'type': 'book', 'pages': 700}))
+# print(get_creators('Spam, spam, spam'))
