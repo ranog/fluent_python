@@ -1,5 +1,3 @@
-"""Build an index mapping word -> list of occurences"""
-
 import re
 import sys
 
@@ -12,8 +10,6 @@ with open(sys.argv[1], encoding='utf-8') as fp:
             word = match.group()
             column_no = match.start() + 1
             location = (line_no, column_no)
-            index.setdefault(word, []).append(location)
-
-# display in alphabetical order
-for word in sorted(index, key=str.upper):
-    print(word, index[word])
+            if word not in index:
+                index[word] = []
+            index[word].append(location)
