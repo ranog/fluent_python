@@ -15,3 +15,7 @@ delhi_data = ('Dalhi NCR', 'IN', 21.935, Coordinate(lat=28.613889, lon=77.208889
 delhi = City._make(delhi_data)
 print(delhi._asdict())
 print(json.dumps(delhi._asdict()))
+
+Coordinate = namedtuple(typename='Coordinate', field_names='lat lon reference', defaults=['WGS84'])
+print(Coordinate(lat=0, lon=0))
+print(Coordinate._field_defaults)
