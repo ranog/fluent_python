@@ -1,10 +1,11 @@
 from dataclasses import dataclass
+from typing import ClassVar
 from club import ClubMember
 
 
 @dataclass
 class HackerClubMember(ClubMember):
-    all_handles = set()
+    all_handles: ClassVar[set[str]] = set()
     handle: str = ''
 
     def __post_init__(self):
