@@ -26,3 +26,15 @@ def match_asian_cities():
 
 
 print(match_asian_cities())
+
+
+def match_asian_countries():
+    results = []
+    for city in cities:
+        match city:
+            case City(continent='Asia', country=country):
+                results.append(country)
+    return results
+
+
+print(match_asian_countries())
