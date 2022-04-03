@@ -38,3 +38,28 @@ def match_asian_countries():
 
 
 print(match_asian_countries())
+
+
+def match_asian_cities_pos():
+    results = []
+    for city in cities:
+        match city:
+            case City('Asia'):
+                results.append(city)
+    return results
+
+
+print(match_asian_cities_pos())
+
+
+def match_asian_countries_pos():
+    results = []
+    for city in cities:
+        match city:
+            case City('Asia', _, country):
+                results.append(country)
+    return results
+
+
+print(match_asian_countries_pos())
+print(f'This is value of __match_args__ in the City class: {City.__match_args__}')
