@@ -19,3 +19,15 @@ print(f'Bus Two: {bus2.passengers}')
 
 print(f'Bus Two is Bus Three? {bus2.passengers is bus3.passengers}')
 print(f'Bus One: {bus1.passengers}')
+
+print()
+print('______________ // ______________')
+print()
+
+print(dir(HauntedBus.__init__))
+
+print()
+print('______________ // ______________')
+print()
+
+print(HauntedBus.__init__.__defaults__)
