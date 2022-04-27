@@ -5,4 +5,5 @@ bus = TwilightBus(basketball_team)
 bus.drop('Tina')
 bus.drop('Pat')
 
-print(basketball_team)
+print(f'basketball team list: {basketball_team}')
+print(f'bus passengers list: {bus.passengers}')
