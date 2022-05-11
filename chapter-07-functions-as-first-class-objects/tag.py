@@ -9,3 +9,14 @@ def tag(name, *content, class_=None, **attrs):
         return '\n'.join(elements)
     else:
         return f'<{name}{attr_str} />'
+
+
+print(tag('br'))
+print(tag('p', 'hello'))
+print(tag('p', 'hello', 'world'))
+print(tag('p', 'hello', id=33))
+print(tag('p', 'hello', 'world', class_='sidebar'))
+print(tag(content='testing', name='img'))
+
+my_tag = {'name': 'img', 'title': 'Sunset Boulevard', 'src': 'sunset.jpg', 'class': 'framed'}
+print(tag(**my_tag))
