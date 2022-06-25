@@ -1,6 +1,7 @@
 from collections.abc import Iterable
+from typing import TypeAlias
 
-FromTo = tuple[str, str]
+FromTo: TypeAlias = tuple[str, str]
 
 
 def zip_replace(text: str, changes: Iterable[FromTo]) -> str:
