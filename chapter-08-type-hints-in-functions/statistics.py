@@ -3,7 +3,7 @@ from decimal import Decimal
 from fractions import Fraction
 from typing import Counter, TypeVar
 
-NumberT = TypeVar('NumberT', float, Decimal, Fraction)
+NumberT = TypeVar('NumberT', float, Decimal, Fraction, str)
 
 
 def mode(data: Iterable[NumberT]) -> float:
