@@ -1,6 +1,5 @@
 from collections.abc import Iterator
 from typing import TYPE_CHECKING
-from typing_extensions import reveal_type
 
 import pytest
 
@@ -14,16 +13,16 @@ def test_top_tuples() -> None:
     expected = [(6, 'banana'), (5, 'mango'), (5, 'apple')]
     result = top(series=series, length=length)
     if TYPE_CHECKING:
-        reveal_type(series)
-        reveal_type(expected)
-        reveal_type(result)
+        reveal_type(series)     # NOQA
+        reveal_type(expected)   # NOQA
+        reveal_type(result)     # NOQA
     assert result == expected
 
 
 def test_top_objects_error() -> None:
     series = [object() for _ in range(4)]
     if TYPE_CHECKING:
-        reveal_type(series)
+        reveal_type(series)     # NOQA
     with pytest.raises(TypeError) as excinfo:
         top(series=series, length=3)
     assert "'<' not supported" in str(excinfo.value)
