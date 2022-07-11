@@ -4,4 +4,12 @@ def f1(a):
 
 
 b = 6
-f1(3)
+
+
+def f2(a):
+    print(a)
+    print(b)
+    b = 9
+
+
+f2(3)
